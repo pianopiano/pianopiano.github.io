@@ -253,3 +253,41 @@ footer {
     color:#444;
   }
 }
+
+
+
+
+header {
+    z-index: 1;
+    position: relative;
+}
+h1 {
+    color: #dfdfdf;
+    display: none;
+}
+
+p {
+    color: #cacaca;
+    display: none;
+}
+.view {
+    margin: 0;
+    display: none;
+}
+a {
+    color: #ff00ff;
+}
+section {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+footer {
+    z-index: 2;
+    position: relative;
+    color: #dfdfdf;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+}
