@@ -15,14 +15,14 @@ var project;
 			light.ambient = 10;
 			light.specular = 10;
 			light.color = 0xFFFFFF;
-			var geometry = new away.primitives.CubeGeometry(1, 1, 1);
-			for (var i = 0; i < 500; i++) {
+			var geometry = new away.primitives.CubeGeometry(2, 1, 1);
+			for (var i = 0; i < 555; i++) {
 				var matTx = new away.materials.ColorMaterial(Math.random() * 0xFF00FF);
 				matTx.lightPicker = new away.materials.StaticLightPicker([light]);
 				var mesh = new away.entities.Mesh(geometry, matTx);
 				mesh.x = 1500 * (Math.random() - 0.5);
-				mesh.y = 1000 * (Math.random() - 0.5);
-				mesh.z = 1000 * (Math.random() - 0.5);
+				mesh.y = 1200 * (Math.random() - 0.5);
+				mesh.z = 1200 * (Math.random() - 0.5);
 				mesh.rotationX = mesh.rotationY = mesh.rotationZ = i
 				this.container.addChild(mesh);
 			}

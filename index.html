@@ -6,6 +6,8 @@
 <title>pianopiano.github.io by pianopiano</title>
 <link rel="stylesheet" href="stylesheets/styles.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style>
+</style>
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -15,25 +17,38 @@
 	<header>
 		<h1>pianopiano.github.io</h1>
 		<p>my github user page</p>
-		<p class="view"><a href="https://github.com/pianopiano">View My GitHub Profile</a></p>
-		<p class="view" style="margin-top: 10px;"><a href="http://pianopiano.jp">pianopiano.jp</a></p>
-		<p class="view"><a href="https://soundcloud.com/pianopiano">soundcloud</a></p>
+		<p class="view"><a href="https://github.com/pianopiano" target="_blank">View My GitHub Profile</a></p>
+		<p class="view lab"><a href="#">labs</a></p>
+		<p class="view" style="margin-top: 15px;"><a href="http://pianopiano.jp" target="_blank">pianopiano.jp</a></p>
+		<p class="view"><a href="https://soundcloud.com/pianopiano" target="_blank">soundcloud</a></p>
 	</header>
+	
 	<section>
+		<h2>labs</h2>
+		<p><a href="http://necostagram.com/" target="_blank">necostagram <span>- ネコ捕獲用 -</span></a></p>
+		<p><a href="http://rss-feed-reader.herokuapp.com" target="_blank">rss feed reader <span>- web storage版 -</span></a></p>
+	</section>
+	<footer>
+		<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+	</footer>
+	
 </div>
-<footer>
-	<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-</footer>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="javascripts/Away3D.min.js"></script>
 <script>
 	$(function(){
     	$(window).on('load', function(){
 	    	setTimeout(function(){
-		    	$('h1').fadeIn(1000);
-				$('p').delay(500).fadeIn(1000);
-	    	}, 1000);
+		    	$('h1').fadeIn(1500);
+				$('p').delay(700).fadeIn(1500);
+	    	}, 700);
+    	});
+    	
+    	$('.lab').on('click', function(){
+	    	$('section').css({'opacity': '1'});
     	})
+    	$('section').css({'opacity': '0'});
+    	
 	})
 </script>
 <script src="javascripts/scale.fix.js"></script>
