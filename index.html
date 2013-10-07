@@ -18,7 +18,7 @@
 		<h1>pianopiano.github.io</h1>
 		<p>my github user page</p>
 		<p class="view"><a href="https://github.com/pianopiano" target="_blank">View My GitHub Profile</a></p>
-		<p class="view lab"><a href="#">labs</a></p>
+		<!-- <p class="view lab"><a href="#">labs</a></p> -->
 		<p class="view" style="margin-top: 15px;"><a href="http://pianopiano.jp" target="_blank">pianopiano.jp</a></p>
 		<p class="view"><a href="https://soundcloud.com/pianopiano" target="_blank">soundcloud</a></p>
 	</header>
@@ -26,7 +26,11 @@
 	<section>
 		<h2>labs</h2>
 		<p><a href="http://necostagram.com/" target="_blank">necostagram <span>- ネコ捕獲用 -</span></a></p>
+		<p><a href="http://socket-planet.herokuapp.com/" target="_blank">socket planet <span>- socket.io、away3D（重いよ） -</span></a></p>
 		<p><a href="http://rss-feed-reader.herokuapp.com" target="_blank">rss feed reader <span>- web storage版 -</span></a></p>
+		<p><a href="http://pianopiano.github.io/flat-rhythm-box/" target="_blank">flat rhythm box <span>- simple sequencer -</span></a></p>
+		<p><a href="http://pianopiano.github.io/tumblr-slide-viewer/" target="_blank">tumblr slide viewer <span>- jQuery plugin -</span></a></p>
+		
 	</section>
 	<footer>
 		<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
@@ -39,16 +43,10 @@
 	$(function(){
     	$(window).on('load', function(){
 	    	setTimeout(function(){
-		    	$('h1').fadeIn(1500);
-				$('p').delay(700).fadeIn(1500);
+		    	$('h1').fadeIn(1200);
+				$('p, section').delay(700).fadeIn(1200);
 	    	}, 700);
     	});
-    	
-    	$('.lab').on('click', function(){
-	    	$('section').css({'opacity': '1'});
-    	})
-    	$('section').css({'opacity': '0'});
-    	
 	})
 </script>
 <script src="javascripts/scale.fix.js"></script>
