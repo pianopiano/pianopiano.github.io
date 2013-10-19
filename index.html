@@ -19,10 +19,8 @@
 		<p>my github user page</p>
 		<p class="view"><a href="https://github.com/pianopiano" target="_blank">View My GitHub Profile</a></p>
 		<!-- <p class="view lab"><a href="#">labs</a></p> -->
-		<p class="view" style="margin-top: 15px;"><a href="http://pianopiano.jp" target="_blank">pianopiano.jp</a></p>
-		<p class="view"><a href="https://soundcloud.com/pianopiano" target="_blank">soundcloud</a></p>
 	</header>
-	
+	<!---
 	<section>
 		<h2>labs</h2>
 		<p><a href="http://necostagram.com/" target="_blank">necostagram <span>- ネコ捕獲用 -</span></a></p>
@@ -30,23 +28,101 @@
 		<p><a href="http://rss-feed-reader.herokuapp.com" target="_blank">rss feed reader <span>- web storage版 -</span></a></p>
 		<p><a href="http://pianopiano.github.io/flat-rhythm-box/" target="_blank">flat rhythm box <span>- simple sequencer -</span></a></p>
 		<p><a href="http://pianopiano.github.io/tumblr-slide-viewer/" target="_blank">tumblr slide viewer <span>- jQuery plugin -</span></a></p>
-		
 	</section>
+	-->
+	<div id="labs">
+		<h2 id="labsBtn">labs <span></span></h2>
+		<ul id="container">
+			<li><a href="http://necostagram.com"><img class="box" src="images/1.png" alt="necostagram.com" width="80" height="80"></a></li>
+			<li><a href="http://rss-feed-reader.herokuapp.com/"><img class="box" src="images/2.png" alt="rss feed reader" width="80" height="80"></a></li>
+			<li><a href="http://pianopiano.github.io/flat-rhythm-box/"><img class="box" src="images/3.png" alt="flat rism box" width="80" height="80"></a></li>
+			<li><a href="http://pianopiano.jp/"><img class="box" src="images/4.png" alt="pianopiano.com" width="80" height="80"></a></li>
+			<li><a href="https://soundcloud.com/pianopiano"><img class="box" src="images/5.jpg" alt="soundcloud.pianopiano" width="80" height="80"></a></li>
+		</ul>
+	</div>
 	<footer>
 		<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
 	</footer>
 	
 </div>
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="javascripts/jquery.transit.min.js"></script>
+<script src="javascripts/jquery.easing.1.3.js"></script>
+<script src="javascripts/Plane.js"></script>
 <script type="text/javascript" src="javascripts/Away3D.min.js"></script>
 <script>
 	$(function(){
     	$(window).on('load', function(){
 	    	setTimeout(function(){
-		    	$('h1').fadeIn(1200);
-				$('p, section').delay(700).fadeIn(1200);
-	    	}, 700);
+		    	$('h1').fadeIn(0);
+				$('p, section, #labs').delay(0).fadeIn(0);
+	    	}, 0);
     	});
+    	
+    	
+		    
+	    var p1 = new Plane($('.box').eq(0));
+	    var p2 = new Plane($('.box').eq(1));
+	    var p3 = new Plane($('.box').eq(2));
+	    var p4 = new Plane($('.box').eq(3));
+	    var p5 = new Plane($('.box').eq(4));
+	    var p6 = new Plane($('.box').eq(5));
+	    var p7 = new Plane($('.box').eq(6));
+	    var p8 = new Plane($('.box').eq(7));
+	    var arr = [
+	    	p1,p2,p3,p4,p5,p6,p7,p8
+	    ]
+	    var w = {
+		    w: 0,
+		    h: 0
+	    }
+	    var flag = false;
+	    $(window).resize(resizeHandler).on('mousemove', function(e){
+	    });
+	    $('#labsBtn').on('click', function(){
+	    	console.log('click')
+	    	flag = !flag;
+		    if (flag) {
+			    $('#labs').animate({'bottom': '0px'}, 500, 'easeOutExpo');
+		    } else {
+			    $('#labs').animate({'bottom': '-200px'}, 500, 'easeOutExpo');
+		    }
+	    })
+	    function resizeHandler() {
+	    	w.w = $(window).width();
+	    	w.h = $(window).height();
+		    $('#labs').width($(window).width());
+		    $('h2').css({
+			    'left': (w.w/2) - $('#container').width()/2+ 'px'
+		    })
+		    
+	    }
+	    resizeHandler();
+	    
+	    $('#container').find('li').on('click', function(){
+		    window.open($(this).children('a').attr('href'))
+		    return false;
+	    }).hover(function(){
+	    	var target = arr[$('#container').find('li').index(this)];
+	    	target.mon();
+	    	$('h2 span').text(target.alt)
+	    }, function(){
+	    	arr[$('#container').find('li').index(this)].moff();
+	    })
+	    
+	    setInterval(function(){
+		    p1.animate();
+		    p2.animate();
+		    p3.animate();
+		    p4.animate();
+		    p5.animate();
+		    p6.animate();
+		    p7.animate();
+		    p8.animate();
+	    }, 800)
+    	
 	})
 </script>
 <script src="javascripts/scale.fix.js"></script>

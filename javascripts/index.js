@@ -16,7 +16,7 @@ var project;
 			light.specular = 10;
 			light.color = 0xFFFFFF;
 			var geometry = new away.primitives.CubeGeometry(2, 1, 1);
-			for (var i = 0; i < 555; i++) {
+			for (var i = 0; i < 480; i++) {
 				var matTx = new away.materials.ColorMaterial(Math.random() * 0xFF00FF);
 				matTx.lightPicker = new away.materials.StaticLightPicker([light]);
 				var mesh = new away.entities.Mesh(geometry, matTx);
@@ -34,7 +34,7 @@ var project;
 			};
 		}
 		Main.prototype.render = function(e) {
-			this.container.rotationX += 0.1;
+			this.container.rotationX += 0.4;
 			this.container.rotationY += 0.1;
 			this.view.render();
 		};
