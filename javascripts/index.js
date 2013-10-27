@@ -15,14 +15,14 @@ var project;
 			light.ambient = 10;
 			light.specular = 10;
 			light.color = 0xFFFFFF;
-			var geometry = new away.primitives.CubeGeometry(2, 1, 1);
+			var geometry = new away.primitives.CubeGeometry(2, 2, 1);
 			for (var i = 0; i < 480; i++) {
 				var matTx = new away.materials.ColorMaterial(Math.random() * 0xFF00FF);
 				matTx.lightPicker = new away.materials.StaticLightPicker([light]);
 				var mesh = new away.entities.Mesh(geometry, matTx);
 				mesh.x = 1500 * (Math.random() - 0.5);
-				mesh.y = 1200 * (Math.random() - 0.5);
-				mesh.z = 1200 * (Math.random() - 0.5);
+				mesh.y = 1500 * (Math.random() - 0.5);
+				mesh.z = 1500 * (Math.random() - 0.5);
 				mesh.rotationX = mesh.rotationY = mesh.rotationZ = i
 				this.container.addChild(mesh);
 			}
@@ -34,8 +34,8 @@ var project;
 			};
 		}
 		Main.prototype.render = function(e) {
-			this.container.rotationX += 0.4;
-			this.container.rotationY += 0.1;
+			this.container.rotationX += 0.5;
+			this.container.rotationY += 0.2;
 			this.view.render();
 		};
 		Main.prototype.handleResize = function() {
